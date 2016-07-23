@@ -85,6 +85,9 @@ func readline() (string, error) {
 	for {
 		var n int
 		n, err = input.Read(b[:])
+		if b[0] == '\n' {
+			break
+		}
 		if n > 0 {
 			buffer.WriteByte(b[0])
 		}
